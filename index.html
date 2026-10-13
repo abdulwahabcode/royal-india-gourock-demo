@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Royal India Gourock | Authentic Indian Restaurant — Gourock, Scotland</title>
+<meta name="description" content="Royal India Gourock — family-run Indian restaurant above the Victoria Bar. West of Scotland-style curries, tandoori grill & set dining. Dine-in, takeaway & delivery." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pine:#0e241a; --pine2:#123023; --card:#152e23;
+    --gold:#e0a83c; --gold-lt:#f2c569; --cream:#f7f1e3; --muted:#a9b8a8;
+    --line:rgba(224,168,60,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;overflow-x:clip;background:var(--pine)}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--pine);color:var(--cream);overflow-x:clip;line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.15;letter-spacing:.01em}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold);text-transform:uppercase;letter-spacing:.24em;font-size:11px;font-weight:700;margin-bottom:14px}
+  .eyebrow::before,.eyebrow::after{content:"";width:22px;height:1px;background:var(--gold)}
+  .sec{padding:70px 0}
+  .sec-title{font-size:clamp(30px,5vw,46px);font-weight:700;margin-bottom:10px}
+  .sec-title em{font-style:italic;color:var(--gold-lt)}
+  .sec-sub{color:var(--muted);max-width:620px;font-size:16px}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:50;background:rgba(14,36,26,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:10px;height:66px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--cream)}
+  .brand-mark{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold-lt);font-size:20px;flex:none;background:radial-gradient(circle at 35% 30%,#1d4030,#0e241a)}
+  .brand-name{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:18px;white-space:nowrap;line-height:1.1}
+  .brand-name small{display:block;font-family:'Inter',sans-serif;font-weight:600;font-size:9px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase}
+  .nav-links{display:none;gap:26px}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;letter-spacing:.04em;transition:color .2s}
+  .nav-links a:hover{color:var(--gold-lt)}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),#b9822a);color:#201503;font-weight:700;font-size:13px;padding:11px 20px;border-radius:999px;text-decoration:none;border:none;cursor:pointer;transition:transform .15s,box-shadow .2s;white-space:nowrap}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(224,168,60,.3)}
+  .btn-ghost{background:transparent;color:var(--cream);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--gold);box-shadow:none}
+  .burger{display:flex;background:none;border:1px solid var(--line);border-radius:10px;padding:8px;cursor:pointer;color:var(--cream)}
+  .mobile-menu{display:none;flex-direction:column;gap:4px;padding:12px 20px 18px;border-top:1px solid var(--line);background:rgba(14,36,26,.98)}
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{color:var(--cream);text-decoration:none;padding:11px 4px;font-size:15px;border-bottom:1px solid rgba(224,168,60,.08)}
+  @media(min-width:900px){.nav-links{display:flex}.burger{display:none}.nav{height:78px}.brand-name{font-size:21px}}
+  @media(max-width:899px){.nav .btn{font-size:12px;padding:9px 13px}.nav .btn svg{width:12px;height:12px}.brand-name{font-size:16px}}
+
+  /* HERO */
+  .hero{position:relative;min-height:90svh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.5}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,36,26,.6) 0%,rgba(14,36,26,.32) 45%,var(--pine) 100%)}
+  .hero-inner{position:relative;z-index:1;padding:84px 0 64px;max-width:1140px;margin:0 auto;padding-left:20px;padding-right:20px;width:100%}
+  .hero h1{font-size:clamp(38px,8vw,74px);font-weight:700;max-width:640px;margin-bottom:16px}
+  .hero h1 em{font-style:italic;color:var(--gold-lt)}
+  .hero p{color:#e6dcc4;max-width:520px;font-size:clamp(15px,2.4vw,18px);margin-bottom:26px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+  .pill-row{display:flex;flex-wrap:wrap;gap:10px}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(18,48,35,.7);border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:12.5px;color:var(--cream);backdrop-filter:blur(6px)}
+  .pill b{color:var(--gold-lt)}
+
+  /* ABOUT */
+  .about{background:var(--pine2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .about-grid{display:grid;gap:36px;align-items:center}
+  @media(min-width:900px){.about-grid{grid-template-columns:1fr 1fr;gap:56px}}
+  .about-img{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.4)}
+  .about-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/4.4}
+  .feat-list{list-style:none;margin-top:22px;display:grid;gap:12px}
+  .feat-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:#e6dcc4}
+  .feat-list svg{flex:none;margin-top:3px}
+
+  /* MENU */
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:30px 0 8px}
+  .tab{background:transparent;border:1px solid var(--line);color:var(--muted);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.05em;padding:10px 18px;border-radius:999px;cursor:pointer;transition:all .2s}
+  .tab.active{background:var(--gold);border-color:var(--gold);color:#201503}
+  .menu-panel{display:none;grid-template-columns:1fr;gap:0;margin-top:18px}
+  .menu-panel.active{display:grid}
+  @media(min-width:760px){.menu-panel.active{grid-template-columns:1fr 1fr;gap:0 48px}}
+  .dish{display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px dashed rgba(224,168,60,.18)}
+  .dish h3{font-size:17px;font-weight:700;color:var(--cream);margin-bottom:4px}
+  .dish p{font-size:13.5px;color:var(--muted)}
+  .price{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold-lt);font-size:18px;white-space:nowrap}
+  .set-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;margin-top:20px}
+  .set-card h3{font-size:22px;color:var(--gold-lt);margin-bottom:6px}
+  .set-card .set-price{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--cream);margin-bottom:14px}
+  .set-card ol{margin-left:20px;color:var(--muted);font-size:14.5px;display:grid;gap:8px}
+  .set-card ol b{color:var(--cream);font-weight:600}
+  .menu-note{margin-top:26px;font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:flex-start}
+  .menu-note svg{flex:none;margin-top:2px}
+
+  /* GALLERY */
+  .gal{background:var(--pine2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+  @media(min-width:760px){.gal-grid{grid-template-columns:repeat(3,1fr)}}
+  .gal-grid figure{border-radius:16px;overflow:hidden;border:1px solid var(--line);position:relative}
+  .gal-grid img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform .5s ease}
+  .gal-grid figure:hover img{transform:scale(1.05)}
+  .gal-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;font-size:13.5px;font-weight:600;background:linear-gradient(transparent,rgba(0,0,0,.75))}
+
+  /* REVIEWS */
+  .rev-grid{display:grid;gap:16px;margin-top:30px}
+  @media(min-width:760px){.rev-grid{grid-template-columns:repeat(2,1fr)}}
+  .rev{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:14px}
+  .stars{display:flex;gap:3px}
+  .rev p{font-size:16px;color:#e6dcc4;font-style:italic}
+  .rev cite{font-style:normal;font-size:12.5px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+  .rev cite b{color:var(--gold-lt)}
+
+  /* VISIT */
+  .visit{background:var(--pine2);border-top:1px solid var(--line)}
+  .visit-grid{display:grid;gap:16px;margin-top:30px}
+  @media(min-width:760px){.visit-grid{grid-template-columns:repeat(3,1fr)}}
+  .vcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
+  .vcard h3{font-size:20px;margin:14px 0 8px;color:var(--gold-lt)}
+  .vcard p,.vcard li{font-size:14.5px;color:var(--muted);list-style:none}
+  .vcard li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed rgba(224,168,60,.14)}
+  .vcard li:last-child{border:none}
+  .vcard li b{color:var(--cream);font-weight:500}
+  .vcard a.tel{color:var(--gold-lt);font-size:21px;font-weight:700;text-decoration:none;font-family:'Cormorant Garamond',serif}
+  .icon-ball{width:44px;height:44px;border-radius:14px;background:rgba(224,168,60,.1);border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+
+  /* CTA */
+  .cta-band{background:linear-gradient(135deg,#1a3a2b,#0e241a);border-top:1px solid var(--line);text-align:center}
+  .cta-band h2{font-size:clamp(28px,5vw,44px);margin-bottom:12px}
+  .cta-band h2 em{font-style:italic;color:var(--gold-lt)}
+  .cta-band p{color:var(--muted);margin-bottom:26px;max-width:560px;margin-left:auto;margin-right:auto}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:44px 0 calc(28px + env(safe-area-inset-bottom,0px));background:#0a1a12}
+  .foot-grid{display:grid;gap:28px}
+  @media(min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+  footer p,footer li{font-size:13.5px;color:var(--muted);list-style:none}
+  footer h4{font-size:12px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:14px}
+  footer li{margin-bottom:8px}
+  .demo-tag{margin-top:30px;padding-top:20px;border-top:1px solid rgba(224,168,60,.1);font-size:11px;letter-spacing:.18em;color:#5f7263;text-transform:uppercase;text-align:center}
+
+  /* sticky call bar */
+  .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(14,36,26,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));transform:translateZ(0)}
+  .sticky-cta::after{content:"";position:absolute;top:100%;left:0;right:0;height:140px;background:rgba(14,36,26,.96);pointer-events:none}
+  .sticky-cta .t1{font-size:10px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;font-weight:700}
+  .sticky-cta .t2{font-size:13px;font-weight:600;color:var(--cream)}
+  @media(min-width:900px){.sticky-cta{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Royal India Gourock home">
+      <span class="brand-mark">R</span>
+      <span class="brand-name">Royal India<small>Gourock · Scotland</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:8px;flex:none">
+      <a class="btn" href="tel:+441475600385">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Book a Table
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mmenu" aria-label="Mobile">
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#visit">Visit Us</a>
+  </nav>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"><img src="images/hero.jpg" alt="Curry and naan at Royal India Gourock"></div>
+  <div class="hero-inner">
+    <span class="eyebrow reveal">Gourock · Inverclyde · Scotland</span>
+    <h1 class="reveal">West of Scotland Curries, <em>Cooked Like Family.</em></h1>
+    <p class="reveal">A family-run Indian restaurant above the Victoria Bar — authentic curries with a culinary heritage dating back to 1972. Dine in, take away, or get it delivered.</p>
+    <div class="hero-cta reveal">
+      <a class="btn" href="#menu">Explore the Menu</a>
+      <a class="btn btn-ghost" href="tel:+441475600385">Call 01475 600385</a>
+    </div>
+    <div class="pill-row reveal">
+      <span class="pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="#e0a83c"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><b>4.8</b>&nbsp;Google · 89 reviews</span>
+      <span class="pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="#e0a83c"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><b>4.6</b>&nbsp;TripAdvisor</span>
+      <span class="pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e0a83c" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Dine-in · Takeaway · Delivery</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-img reveal"><img src="images/tikka.webp" alt="Chicken tikka over open flames"></div>
+    <div>
+      <span class="eyebrow reveal">Our Story</span>
+      <h2 class="sec-title reveal">A Family Kitchen <em>Since 1972</em></h2>
+      <p class="sec-sub reveal">Run by Matt &amp; family, Royal India specialises in authentic West of Scotland-style curries — recipes refined over generations, tandoor fired daily, and a welcome that keeps Gourock coming back.</p>
+      <ul class="feat-list">
+        <li class="reveal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e0a83c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Dine-in above the Victoria Bar, takeaway &amp; delivery</li>
+        <li class="reveal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e0a83c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Set dining experience — four courses from £15 per guest</li>
+        <li class="reveal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e0a83c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Vegetarian options across starters &amp; mains</li>
+        <li class="reveal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e0a83c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>20% off when you order on our own website</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- MENU -->
+<section class="sec" id="menu">
+  <div class="wrap">
+    <span class="eyebrow reveal">The Menu</span>
+    <h2 class="sec-title reveal">Classics &amp; <em>House Specials</em></h2>
+    <p class="sec-sub reveal">A taste of our most-loved dishes — including a Scottish twist or two. Full menu in the restaurant.</p>
+    <div class="tabs reveal" role="tablist">
+      <button class="tab active" data-tab="starters">Starters</button>
+      <button class="tab" data-tab="mains">Mains</button>
+      <button class="tab" data-tab="set">Set Dining</button>
+    </div>
+
+    <div class="menu-panel active" id="panel-starters">
+      <div class="dish reveal"><div><h3>Chicken Pakora — Beer Batter</h3><p>Crispy battered chicken, a house favourite starter.</p></div><span class="price">£7.95</span></div>
+      <div class="dish reveal"><div><h3>Irn Bru Chicken Pakora</h3><p>Our Scottish twist on the classic pakora.</p></div><span class="price">£8.95</span></div>
+      <div class="dish reveal"><div><h3>Chicken Tikka Starter</h3><p>Chargrilled in a traditional clay tandoor.</p></div><span class="price">£5.95</span></div>
+      <div class="dish reveal"><div><h3>Vegetable Pakora</h3><p>Crisp, spiced vegetarian starter.</p></div><span class="price">£3.95</span></div>
+    </div>
+
+    <div class="menu-panel" id="panel-mains">
+      <div class="dish reveal"><div><h3>Chicken Nawabi</h3><p>Elegant &amp; mild — spiced minced meat folded into fresh cream with sun-dried fruits &amp; toasted almond flakes.</p></div><span class="price">£8.95</span></div>
+      <div class="dish reveal"><div><h3>Chicken Masalader</h3><p>Chargrilled chicken in a mildly tangy, richly spiced, silky sauce.</p></div><span class="price">£9.95</span></div>
+      <div class="dish reveal"><div><h3>Chicken Jammu</h3><p>Delicately sweet northern dish with seasonal fruits &amp; aromatic herbs.</p></div><span class="price">£8.95</span></div>
+      <div class="dish reveal"><div><h3>Chicken Kashmiri Curry</h3><p>Creamy, mildly spiced — with pineapple, mango or banana.</p></div><span class="price">£8.95</span></div>
+      <div class="dish reveal"><div><h3>Chicken Sharabi</h3><p>Premium spirit reduced into a velvety, indulgent sauce.</p></div><span class="price">£13.95</span></div>
+      <div class="dish reveal"><div><h3>Chicken Tikka Main</h3><p>Marinated 24 hours in tandoori spices, charcoal-chargrilled — signature gravy, fried basmati rice &amp; salad.</p></div><span class="price">£9.95</span></div>
+      <div class="dish reveal"><div><h3>Tandoori Mix Main</h3><p>A tandoori selection served with naan.</p></div><span class="price">£15.95</span></div>
+    </div>
+
+    <div class="menu-panel" id="panel-set">
+      <div class="set-card reveal">
+        <h3>The Royal India Set Dining Experience</h3>
+        <div class="set-price">£15 <span style="font-size:15px;color:var(--muted)">per guest Sun–Thu</span> &nbsp;·&nbsp; £20 <span style="font-size:15px;color:var(--muted)">per guest Fri–Sat</span></div>
+        <ol>
+          <li><b>To begin</b> — poppadoms &amp; chutneys</li>
+          <li><b>Then</b> — pakora &amp; tandoori drumsticks</li>
+          <li><b>Main course</b> — your choice of curry with basmati rice or naan <span style="color:var(--muted)">(lamb +£1 · lamb tikka +£2 · king prawns +£3)</span></li>
+          <li><b>Finale</b> — warm gulab jamun with vanilla ice cream</li>
+        </ol>
+      </div>
+    </div>
+
+    <p class="menu-note reveal"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e0a83c" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01" stroke-linecap="round"/></svg><span>Please let us know about allergies. Vegetarian options available across starters &amp; mains — just ask.</span></p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec gal">
+  <div class="wrap">
+    <span class="eyebrow reveal">From the Tandoor</span>
+    <h2 class="sec-title reveal">Fired Daily, <em>Served with Pride</em></h2>
+    <div class="gal-grid">
+      <figure class="reveal"><img src="images/hero.jpg" alt="Curry with naan" loading="lazy"><figcaption>Curry &amp; Naan</figcaption></figure>
+      <figure class="reveal"><img src="images/tikka.webp" alt="Chicken tikka skewers" loading="lazy"><figcaption>Tandoor Tikka</figcaption></figure>
+      <figure class="reveal"><img src="images/curry.jpg" alt="Butter chicken with naan" loading="lazy"><figcaption>House Curries</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <span class="eyebrow reveal">Guest Love</span>
+    <h2 class="sec-title reveal">What Gourock <em>Says</em></h2>
+    <div class="rev-grid">
+      <div class="rev reveal">
+        <div class="stars">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="#e0a83c"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="#e0a83c"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="#e0a83c"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="#e0a83c"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="#e0a83c"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </div>
+        <p>"Absolutely fantastic. The best Indian food I've tasted in Scotland. Thoroughly recommend a visit."</p>
+        <cite><b>TripAdvisor</b> · Graham W</cite>
+      </div>
+      <div class="rev reveal">
+        <div class="stars">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="#e0a83c"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="#e0a83c"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="#e0a83c"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="#e0a83c"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="#e0a83c"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </div>
+        <p>"Fantastic experience, the food, atmosphere and service were excellent."</p>
+        <cite><b>Google</b> · Angela McCairn</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="sec visit" id="visit">
+  <div class="wrap">
+    <span class="eyebrow reveal">Find Us</span>
+    <h2 class="sec-title reveal">Above the Victoria Bar, <em>Heart of Gourock</em></h2>
+    <div class="visit-grid">
+      <div class="vcard reveal">
+        <div class="icon-ball"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e0a83c" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Address</h3>
+        <p>2 Hopeton Street<br>Gourock PA19 1PG<br>Scotland</p>
+        <p style="margin-top:14px"><a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Royal+India+2+Hopeton+Street+Gourock+PA19+1PG" target="_blank" rel="noopener">Get Directions</a></p>
+      </div>
+      <div class="vcard reveal">
+        <div class="icon-ball"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e0a83c" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>Opening Hours</h3>
+        <ul>
+          <li><b>Mon – Thu</b><span>4:00 – 10:00 PM</span></li>
+          <li><b>Fri – Sat</b><span>4:00 – 10:30 PM</span></li>
+          <li><b>Sunday</b><span>2:30 – 10:00 PM</span></li>
+        </ul>
+      </div>
+      <div class="vcard reveal">
+        <div class="icon-ball"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e0a83c" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>Book a Table</h3>
+        <p style="margin-bottom:10px">Call us directly — we love hearing from you.</p>
+        <a class="tel" href="tel:+441475600385">01475 600385</a>
+        <p style="margin-top:14px"><a class="btn" href="tel:+441475600385">Call Now</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec cta-band">
+  <div class="wrap">
+    <h2 class="reveal">Tonight, <em>Eat Like Royalty.</em></h2>
+    <p class="reveal">Dine in above the Victoria Bar, grab a takeaway in ~15 minutes, or get it delivered in ~30.</p>
+    <div class="reveal" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="btn" href="#menu">See the Menu</a>
+      <a class="btn btn-ghost" href="tel:+441475600385">01475 600385</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top" style="margin-bottom:14px">
+          <span class="brand-mark">R</span>
+          <span class="brand-name">Royal India<small>Gourock · Scotland</small></span>
+        </a>
+        <p>Family-run Indian restaurant in Gourock — West of Scotland-style curries with a culinary heritage dating back to 1972.</p>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>2 Hopeton Street, Gourock</li>
+          <li>PA19 1PG, Scotland</li>
+          <li><a href="tel:+441475600385" style="color:var(--gold-lt);text-decoration:none">01475 600385</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <ul>
+          <li>Mon – Thu: 4 – 10 PM</li>
+          <li>Fri – Sat: 4 – 10:30 PM</li>
+          <li>Sun: 2:30 – 10 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="demo-tag">Demo concept &middot; Built by Wahab Codes</div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <div><div class="t1">Royal India</div><div class="t2">Book Your Table</div></div>
+  <a class="btn" href="tel:+441475600385">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    01475 600385
+  </a>
+</div>
+
+<script>
+var burger=document.getElementById('burger'),mmenu=document.getElementById('mmenu');
+burger.addEventListener('click',function(){mmenu.classList.toggle('open')});
+mmenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mmenu.classList.remove('open')})});
+document.querySelectorAll('.tab').forEach(function(t){
+  t.addEventListener('click',function(){
+    document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active')});
+    document.querySelectorAll('.menu-panel').forEach(function(p){p.classList.remove('active')});
+    t.classList.add('active');
+    var panel=document.getElementById('panel-'+t.getAttribute('data-tab'));
+    if(panel){panel.classList.add('active');
+      panel.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});
+    }
+  });
+});
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
